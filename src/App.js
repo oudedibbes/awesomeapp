@@ -35,23 +35,23 @@ const all_pokemon = [
 
 function App() {
   return (
-    <div className='App'>
-      <main>
-        <Title content="Some Simple Title" />
-        {/* TODO map over the pokemon here */}
+    <div className='App my-5'>
+      <main className="container">
+      <Title content="Some Simple Title"/>
+      <div className="row">
         {all_pokemon.map((pokemon, index) => (
-          <p>
-          <Pokemon
-            key={index}
-            name={pokemon.name}
-            weight={pokemon.weight}
-            awesome={pokemon.awesome}
-            terrifying={pokemon.terrifying}
-            abilities={pokemon.abilities}
-          />
-          </p>
+          <div key={index} className="col-md-6 col-lg-4">
+            <Pokemon
+              name={pokemon.name}
+              weight={pokemon.weight}
+              awesome={pokemon.awesome}
+              terrifying={pokemon.terrifying}
+              abilities={pokemon.abilities}
+            />
+          </div>
         ))}
-      </main>
+      </div>
+    </main>
     </div>
   );
 }

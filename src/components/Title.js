@@ -1,3 +1,3 @@
 export default function Title(props) {
-  return <h1>{props.content}</h1>;
+  return <h1 className="mb-4">{props.content}</h1>;
 }
