@@ -4,6 +4,11 @@ body{
   background-color: #282c34;
 }
 
+p{
+  margin: .5rem 0;
+  font-size: calc(10px + 1.5vmin);
+}
+
 .App {
   text-align: center;
   margin: auto;
