@@ -1,33 +1,57 @@
 import './App.css';
-import Title from './components/Title';
-import Pokemon from "./components/Pokemon"
+ import Title from './components/Title';
+ import Pokemon from "./components/Pokemon"
+
+const all_pokemon = [
+  {
+    name: "Charizard",
+    weight: 90,
+    awesome: true,
+    terrifying: false,
+    abilities: ["Blaze", "Solar power", "Tough claws", "Drought"]
+  },
+  {
+    name: "Bulbasaur",
+    weight: 6.9,
+    awesome: true,
+    terrifying: false,
+    abilities: ["Overgrow", "Chlorophyll"]
+  },
+  {
+    name: "Mewtwo",
+    weight: 122,
+    awesome: true,
+    terrifying: true,
+    abilities: ["Pressure", "Unnerve", "Steadfast", "Insomnia"]
+  },
+  {
+    name: "Mega beedrill",
+    weight: 65,
+    awesome: false,
+    terrifying: true,
+    abilities: ["Intimidate", "Unnerve"]
+  }
+];
 
 function App() {
-  const myName = 'René';
-  const myCourse = 'React Bootcamp';
   return (
     <div className='App'>
-      <header className='App-header'>
-        <p>
-          <Title content='React Bootcamp' />
+      <main>
+        <Title content="Some Simple Title" />
+        {/* TODO map over the pokemon here */}
+        {all_pokemon.map((pokemon, index) => (
+          <p>
           <Pokemon
-          name="Charizard"
-          weight={90}
-          awesome={true}
-          terrifying={false}
-          abilities={["Blaze", "Solar power", "Tough claws", "Drought"]}
-        />
-        <Pokemon
-          name="Bulbasaur"
-          weight={6.9}
-          awesome={true}
-          terrifying={false}
-          abilities={["Overgrow", "Chlorophyll"]}
-        />
-        </p>
-        <h1>Hello World, my name is {myName} </h1>
-        <p>i just started this {myCourse}</p>
-      </header>
+            key={index}
+            name={pokemon.name}
+            weight={pokemon.weight}
+            awesome={pokemon.awesome}
+            terrifying={pokemon.terrifying}
+            abilities={pokemon.abilities}
+          />
+          </p>
+        ))}
+      </main>
     </div>
   );
 }
